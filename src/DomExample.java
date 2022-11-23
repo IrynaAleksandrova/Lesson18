@@ -1,3 +1,5 @@
+package src;
+
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -13,7 +15,7 @@ public class DomExample {
     public static void main(String[] args) {
         try {
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document document = documentBuilder.parse("BookCatalog.xml");
+            Document document = documentBuilder.parse("resource/BookCatalog.xml");
 
             Node root = document.getDocumentElement();
             System.out.println();

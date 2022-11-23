@@ -1,3 +1,5 @@
+package src;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
@@ -21,7 +23,7 @@ public class DomExample2 {
     public static void main(String[] args) {
         try {
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document document = documentBuilder.parse("BookCatalog.xml");
+            Document document = documentBuilder.parse("resource/BookCatalog.xml");
             addNewBook(document);
 
         } catch (ParserConfigurationException | SAXException | IOException ex) {
@@ -55,7 +57,7 @@ public class DomExample2 {
         try {
             Transformer tr = TransformerFactory.newInstance().newTransformer();
             DOMSource source = new DOMSource(document);
-            FileOutputStream fos = new FileOutputStream("BookCatalog2.xml");
+            FileOutputStream fos = new FileOutputStream("resource/BookCatalog2.xml");
             StreamResult result = new StreamResult(fos);
             tr.transform(source, result);
         } catch (TransformerException | IOException e) {
